@@ -1,4 +1,4 @@
-package TransportType;
+package Package_TransportType;
 
 public class Transport_1 implements ChooseTransportType{
 
