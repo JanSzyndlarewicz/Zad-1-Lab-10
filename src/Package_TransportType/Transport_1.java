@@ -5,7 +5,8 @@ public class Transport_1 implements ChooseTransportType{
     public Transport_1(){
     }
 
-    public void ChooseTransport(){
-        System.out.println("Ta metoda jest odpowiedzialna za wybranie rodzaju transportu za pomocą algorytmu nr 1");
+    @Override
+    public void ChooseTransport() {
+        System.out.println("Ta metoda jest odpowiedzialna za wybranie rodzaju transportu za pomocą algorytmu nr 1 (najwygodniejszy transport)");
     }
 }

@@ -13,7 +13,7 @@ public abstract class ReachDestination {
     public ReachDestination(){
     }
 
-    public void doStrategy(int nrStrategy){
+    public void doOneStrategy(int nrStrategy){
         switch (nrStrategy){
             case 1:{
                 this.tt.ChooseTransport();
@@ -29,7 +29,12 @@ public abstract class ReachDestination {
         }
     }
 
-    public void setNewStrategy(int nrStrategy, ChooseTransportType tt, String algorytmInfoRoute, ChooseRouteType rt, String algorytmInfoTransport){
+    public void doAllStrategy(){
+        this.tt.ChooseTransport();
+        this.rt.ChooseRoute();
+    }
+
+    public void setNewStrategy(int nrStrategy, ChooseTransportType tt, String algorytmInfoTransport, ChooseRouteType rt, String algorytmInfoRoute){
         switch (nrStrategy){
             case 1:{
                 if(tt != null){
