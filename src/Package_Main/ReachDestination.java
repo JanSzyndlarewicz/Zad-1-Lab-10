@@ -71,6 +71,7 @@ public class ReachDestination {
                 default: {
                     System.out.println("Brak strategii");
                     break;
+
                 }
 
             }
