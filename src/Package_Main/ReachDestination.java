@@ -169,10 +169,23 @@ public class ReachDestination {
 
 /*
         p1.doAllStrategy();
+import Package_TransportType.ChooseTransportType;
+import Package_TransportType.Transport_1;
+
+public class ReachDestination {
+    public ReachDestination(){
+    }
+    public static void main(String[] args) {
+        Project_1 p1 = new Project_1();
+        Project_2 p2 = new Project_2();
+
+        p1.doStrategy(1);
+        p1.doStrategy(2);
         p1.printInfo();
 
         System.out.println("\n\n");
 
+<<<<<<< HEAD
         p2.doOneStrategy(1);
         p2.doOneStrategy(2);
         p2.printInfo();
@@ -187,5 +200,6 @@ public class ReachDestination {
         p1.doOneStrategy(2);
         p1.printInfo();
 */
+
     }
 }
