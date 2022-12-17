@@ -79,14 +79,63 @@ public class ReachDestination {
 
     }
 
+    public static void setNewStrategyP2(int nrStrategy, int whichPart, Project_2 p2) {
+        if (whichPart == 1) {
+            switch (nrStrategy) {
+                case 1: {
+                    p2.setNewStrategy(whichPart, new Transport_1(), "Algorytm 1 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    break;
+                }
+                case 2: {
+                    p2.setNewStrategy(whichPart, new Transport_2(), "Algorytm 2 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    break;
+                }
+                case 3: {
+                    p2.setNewStrategy(whichPart, new Transport_3(), "Algorytm 3 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    break;
+                }
+                default: {
+                    System.out.println("Brak strategii");
+                    break;
+                }
+
+            }
+        } else if (whichPart == 2) {
+            switch (nrStrategy) {
+                case 1: {
+                    p2.setNewStrategy(2, (ChooseTransportType) null, "", new Route_1(), "Algorytm 1 na znalezienie trasy");
+                    break;
+                }
+                case 2: {
+                    p2.setNewStrategy(2, (ChooseTransportType) null, "", new Route_2(), "Algorytm 2 na znalezienie trasy");
+                    break;
+                }
+                case 3: {
+                    p2.setNewStrategy(2, (ChooseTransportType) null, "", new Route_3(), "Algorytm 3 na znalezienie trasy");
+                    break;
+                }
+                default: {
+                    System.out.println("Brak strategii");
+                    break;
+
+                }
+
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
 
-        Project_1 p1 = new Project_1();
+        //Project_1 p1 = new Project_1();
         Project_2 p2 = new Project_2();
         int userChoiceProject;
         int userChoiceEdition = 0;
+
+        Package_ReachDestination.ReachDestination p;
+
 
         do {
             menuProjekt();
@@ -95,6 +144,66 @@ public class ReachDestination {
 
             switch (userChoiceProject) {
                 case 1: {
+                    p = new Project_1();
+                    do {
+                        menu();
+
+                        userChoiceEdition = scan.nextInt();
+
+                        switch (userChoiceEdition) {
+
+                            case 0: {
+                                System.out.println("Koniec działania programu");
+                                break;
+                            }
+                            case 1: {
+                                p.printInfo();
+                                break;
+                            }
+                            case 2: {
+                                p.doAllStrategy();
+                                break;
+                            }
+                            case 3: {
+                                int whichPart;
+                                System.out.println("Którą część strategii wyświetlić?");
+                                whichPart = scan.nextInt();
+                                p.doOneStrategy(whichPart);
+                                break;
+                            }
+                            case 4: {
+                                int whichPart;
+                                int nrStrategy;
+
+                                do {
+                                    System.out.println("Wybierz którą strategię edytować");
+                                    System.out.println("1 - ChooseTransportType");
+                                    System.out.println("2 - ChooseRouteType");
+                                    whichPart = scan.nextInt();
+                                } while (whichPart < 1 || whichPart > 2);
+
+                                do {
+                                    System.out.println("Wybierz nr strategii:");
+                                    nrStrategy = scan.nextInt();
+                                } while (nrStrategy < 1 || nrStrategy > 3);
+
+                                setNewStrategyP1(nrStrategy, whichPart, (Project_1) p);
+
+                                break;
+                            }
+                            case 5: {
+                                break;
+                            }
+                            default: {
+                                System.out.println("Niepoprawne dane");
+                            }
+                        }
+                    } while (userChoiceEdition != 5);
+
+                    break;
+                }
+
+                case 2: {
 
                     do {
                         menu();
@@ -108,17 +217,18 @@ public class ReachDestination {
                                 break;
                             }
                             case 1: {
-                                p1.printInfo();
+                                p2.printInfo();
                                 break;
                             }
                             case 2: {
-                                p1.doAllStrategy();
+                                p2.doAllStrategy();
                                 break;
                             }
                             case 3: {
                                 int whichPart;
+                                System.out.println("Którą część strategii wyświetlić?");
                                 whichPart = scan.nextInt();
-                                p1.doOneStrategy(whichPart);
+                                p2.doOneStrategy(whichPart);
                                 break;
                             }
                             case 4: {
@@ -138,7 +248,7 @@ public class ReachDestination {
                                         nrStrategy = scan.nextInt();
                                     } while (nrStrategy < 1 || nrStrategy > 3);
 
-                                    setNewStrategyP1(nrStrategy, whichPart, p1);
+                                    setNewStrategyP2(nrStrategy, whichPart, p2);
                                 }
                                 break;
                             }
@@ -154,53 +264,14 @@ public class ReachDestination {
                     break;
                 }
 
-                case 2: {
-                    Project_2 p = new Project_2();
-                    break;
-                }
-
                 default: {
-                    Project_1 p = null;
+                    //Project_1 p = null;
                     System.out.println("Niepoprawna liczba, spróbuj ponownie");
                     break;
                 }
 
             }
         } while (userChoiceProject < 1 || userChoiceProject > 2 || userChoiceEdition == 5);
-
-/*
-        p1.doAllStrategy();
-import Package_TransportType.ChooseTransportType;
-import Package_TransportType.Transport_1;
-
-public class ReachDestination {
-    public ReachDestination(){
-    }
-    public static void main(String[] args) {
-        Project_1 p1 = new Project_1();
-        Project_2 p2 = new Project_2();
-
-        p1.doStrategy(1);
-        p1.doStrategy(2);
-        p1.printInfo();
-
-        System.out.println("\n\n");
-
-<<<<<<< HEAD
-        p2.doOneStrategy(1);
-        p2.doOneStrategy(2);
-        p2.printInfo();
-
-        System.out.println("\n\n Zmiana Algorytmów");
-        p2.setNewStrategy(1, new Transport_1(), "Algorytm 1 na wybranie środka transportu", (ChooseRouteType) null, "");
-        p2.doOneStrategy(1);
-        p2.printInfo();
-
-        System.out.println("\n\n");
-        p1.setNewStrategy(2, (ChooseTransportType) null, "", new Route_1(), "Algorytm 1 na znalezienie trasy");
-        p1.doOneStrategy(2);
-        p1.printInfo();
-*/
 
     }
 }
