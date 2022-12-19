@@ -9,9 +9,9 @@ public class Project_2 extends ReachDestination{
 
     public Project_2(){
         this.tt = new Transport_2();
-        this.setAlgorytmInfoTransport("Algorytm nr 2 na wybranie środka transportu2");
+        this.setAlgorytmInfoTransport("Algorytm nr 2 na wybranie środka transportu");
         this.rt = new Route_1();
-        this.setAlgorytmInfoRoute("Algorytm nr 1 na wybranie drogi2");
+        this.setAlgorytmInfoRoute("Algorytm nr 1 na wybranie drogi");
     }
 
     @Override

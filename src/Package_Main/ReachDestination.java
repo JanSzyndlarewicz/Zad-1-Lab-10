@@ -2,6 +2,7 @@ package Package_Main;
 
 import Package_ReachDestination.Project_1;
 import Package_ReachDestination.Project_2;
+import Package_ReachDestination.Project_3;
 import Package_RouteType.ChooseRouteType;
 import Package_RouteType.Route_1;
 import Package_RouteType.Route_2;
@@ -19,6 +20,7 @@ public class ReachDestination {
     }
 
     public static void menu() {
+        System.out.println("'\n-----Menu-----");
         System.out.println("0 - Zakończ program");
         System.out.println("1 - Wyświetl informacje o wybranej strategii");
         System.out.println("2 - Wykonaj całą strategię");
@@ -30,6 +32,7 @@ public class ReachDestination {
     public static void menuProjekt() {
         System.out.println("1 - Projekt nr 1");
         System.out.println("2 - Projekt nr 2");
+        System.out.println("3 - Projekt nr 3");
         System.out.print("Wybierz projekt: ");
     }
 
@@ -37,15 +40,15 @@ public class ReachDestination {
         if (whichPart == 1) {
             switch (nrStrategy) {
                 case 1: {
-                    p.setNewStrategy(whichPart, new Transport_1(), "Algorytm 1 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    p.setNewStrategy(whichPart, new Transport_1(), "Algorytm 1 na wybranie środka transportu (rower)", (ChooseRouteType) null, "");
                     break;
                 }
                 case 2: {
-                    p.setNewStrategy(whichPart, new Transport_2(), "Algorytm 2 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    p.setNewStrategy(whichPart, new Transport_2(), "Algorytm 2 na wybranie środka transportu (samochód)", (ChooseRouteType) null, "");
                     break;
                 }
                 case 3: {
-                    p.setNewStrategy(whichPart, new Transport_3(), "Algorytm 3 na wybranie środka transportu", (ChooseRouteType) null, "");
+                    p.setNewStrategy(whichPart, new Transport_3(), "Algorytm 3 na wybranie środka transportu (autobus)", (ChooseRouteType) null, "");
                     break;
                 }
                 default: {
@@ -105,6 +108,12 @@ public class ReachDestination {
 
                     break;
                 }
+
+                case 3:{
+                    p = new Project_3();
+                    break;
+                }
+
                 default:{
                     p = new Project_1();
                 }

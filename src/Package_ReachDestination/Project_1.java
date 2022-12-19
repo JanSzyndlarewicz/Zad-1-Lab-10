@@ -8,9 +8,9 @@ public class Project_1 extends ReachDestination{
 
     public Project_1(){
         this.tt = new Transport_1();
-        this.setAlgorytmInfoTransport("Algorytm nr 1 na wybranie środka transportu1");
+        this.setAlgorytmInfoTransport("Algorytm nr 1 na wybranie środka transportu");
         this.rt = new Route_2();
-        this.setAlgorytmInfoRoute("Algorytm nr 2 na wybranie drogi1");
+        this.setAlgorytmInfoRoute("Algorytm nr 2 na wybranie drogi");
     }
 
 
