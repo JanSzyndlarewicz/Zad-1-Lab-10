@@ -2,8 +2,7 @@ package Package_TransportType;
 
 public class Transport_2 implements ChooseTransportType{
 
-    public Transport_2(){
-    }
+
 
     @Override
     public void ChooseTransport() {

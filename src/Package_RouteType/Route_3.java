@@ -2,8 +2,7 @@ package Package_RouteType;
 
 public class Route_3 implements ChooseRouteType{
 
-    public Route_3(){
-    }
+
 
     @Override
     public void ChooseRoute() {

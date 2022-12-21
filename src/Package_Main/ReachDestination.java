@@ -16,11 +16,9 @@ import java.util.Scanner;
 
 
 public class ReachDestination {
-    public ReachDestination() {
-    }
 
     public static void menu() {
-        System.out.println("'\n-----Menu-----");
+        System.out.println("\n-----Menu-----");
         System.out.println("0 - Zakończ program");
         System.out.println("1 - Wyświetl informacje o wybranej strategii");
         System.out.println("2 - Wykonaj całą strategię");
